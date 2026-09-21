@@ -19,7 +19,7 @@
             overflow-x: hidden;
         }
 
-        /* Fő konténer: reszponzív felső eltolással */
+        /* Fő konténer: marad a nagy felső eltolás és fixen középen van */
         .fo-oldal-elrendezes {
             display: flex;
             flex-direction: column;
@@ -34,7 +34,7 @@
             width: 100%;
         }
 
-        /* Legfelső szakasz / Dobozok alapstílusa */
+        /* Dobozok alapstílusa - tökéletes középre igazítva */
         .tap-csatlakozo-szekcio, .also-tartalom-doboz {
             width: 100%;
             max-width: 1300px;
@@ -87,6 +87,7 @@
             max-width: 1200px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
             box-sizing: border-box;
+            margin: 0 auto;
         }
 
         .kep-elem img {
@@ -134,6 +135,7 @@
             flex-shrink: 0;
             width: 100%;
             max-width: 550px;
+            margin: 0 auto;
         }
 
         .kep-kontener {
@@ -141,6 +143,7 @@
             display: inline-block;
             width: 100%;
             max-width: 550px; 
+            margin: 0 auto;
         }
 
         .alap-kep {
@@ -167,6 +170,7 @@
             flex-direction: column;
             gap: 15px;
             text-align: left;
+            margin: 0 auto;
         }
 
         .leiras-doboz {
@@ -220,36 +224,36 @@
             pointer-events: auto; 
         }
 
-        .btn-power { top: 12%; left: 22%; width: 14%; height: 7%; border-radius: 50%; }
-        .btn-nema { top: 7%; left: 71%; width: 14%; height: 7%; border-radius: 50%; }
-        .btn-pgplus { top: 21%; left: 29%; width: 14%; height: 7%; border-radius: 50%; }
-        .btn-airmouse { top: 18%; left: 54%; width: 14%; height: 7%; border-radius: 50%; }  
-        .btn-pgminus { top: 15%; left: 79%; width: 14%; height: 7%; border-radius: 50%; }
-        .btn-up { top: 26%; left: 62%; width: 8%; height: 4%; border-radius: 50%; }
-        .btn-down { top: 34%; left: 65%; width: 8%; height: 4%; border-radius: 50%; }
-        .btn-left { top: 31%; left: 52%; width: 8%; height: 4%; border-radius: 50%; }
-        .btn-right { top: 30%; left: 76%; width: 8%; height: 4%; border-radius: 50%; }
-        .btn-ok { top: 28%; left: 61%; width: 15%; height: 7%; border-radius: 50%; }
-        .btn-vissza { top: 40%; left: 62%; width: 8%; height: 4%; border-radius: 30%; }
-        .btn-home { top: 39%; left: 76%; width: 8%; height: 4%; border-radius: 30%; }
-        .btn-voldown { top: 45%; left: 59%; width: 9%; height: 4%; border-radius: 50%; }
-        .btn-mikrofon { top: 44%; left: 72%; width: 9%; height: 4%; border-radius: 50%; }
-        .btn-volup { top: 42%; left: 85%; width: 9%; height: 4%; border-radius: 50%; }
-        .btn-prev { top: 50%; left: 62%; width: 9%; height: 4%; border-radius: 50%; }
-        .btn-play { top: 49%; left: 76%; width: 9%; height: 4%; border-radius: 50%; }
-        .btn-next { top: 47%; left: 90%; width: 9%; height: 4%; border-radius: 50%; }
-        .btn-1 { top: 55%; left: 66%; width: 14%; height: 6%; border-radius: 50%; }
-        .btn-2 { top: 54%; left: 81%; width: 14%; height: 6%; border-radius: 50%; }
-        .btn-3 { top: 52%; left: 95%; width: 14%; height: 6%; border-radius: 50%; }
-        .btn-4 { top: 61%; left: 70%; width: 14%; height: 6%; border-radius: 50%; }
-        .btn-5 { top: 60%; left: 84%; width: 14%; height: 6%; border-radius: 50%; }
-        .btn-6 { top: 58%; left: 98%; width: 14%; height: 6%; border-radius: 50%; }
-        .btn-7 { top: 67%; left: 73%; width: 14%; height: 6%; border-radius: 50%; }
-        .btn-8 { top: 65%; left: 87%; width: 14%; height: 6%; border-radius: 50%; }
-        .btn-9 { top: 64%; left: 102%; width: 14%; height: 6%; border-radius: 50%; }
-        .btn-del { top: 105%; left: 99%; width: 14%; height: 6%; border-radius: 50%; }
-        .btn-0 { top: 103%; left: 125%; width: 14%; height: 6%; border-radius: 50%; }
-        .btn-settings { top: 100%; left: 150%; width: 14%; height: 6%; border-radius: 50%; }
+        .btn-power { top: 12%; left: 22%; width:  9%; height: 5%; border-radius: 50%; }
+         .btn-nema { top: 7%; left: 71%;  width:  9%; height: 5%; border-radius: 50%; }
+       .btn-pgplus { top: 21%; left: 29%; width:  9%; height: 5%; border-radius: 50%; }
+     .btn-airmouse { top: 18%; left: 54%; width:  9%; height: 5%; border-radius: 50%; }  
+      .btn-pgminus { top: 15%; left: 79%; width:  9%; height: 5%; border-radius: 50%; }
+           .btn-up { top: 26%; left: 62%; width:  9%; height: 5%; border-radius: 50%; }
+         .btn-down { top: 34%; left: 65%; width:  9%; height: 5%; border-radius: 50%; }
+         .btn-left { top: 31%; left: 52%; width:  9%; height: 5%; border-radius: 50%; }
+        .btn-right { top: 30%; left: 76%; width:  9%; height: 5%; border-radius: 50%; }
+           .btn-ok { top: 28%; left: 61%; width: 15%; height: 7%; border-radius: 50%; }
+       .btn-vissza { top: 40%; left: 62%; width:  9%; height: 5%; border-radius: 30%; }
+         .btn-home { top: 39%; left: 76%; width:  9%; height: 5%; border-radius: 30%; }
+      .btn-voldown { top: 45%; left: 59%; width:  9%; height: 5%; border-radius: 50%; }
+     .btn-mikrofon { top: 44%; left: 72%; width:  9%; height: 5%; border-radius: 50%; }
+        .btn-volup { top: 42%; left: 85%; width:  9%; height: 5%; border-radius: 50%; }
+         .btn-prev { top: 50%; left: 62%; width:  9%; height: 5%; border-radius: 50%; }
+         .btn-play { top: 49%; left: 76%; width:  9%; height: 5%; border-radius: 50%; }
+         .btn-next { top: 47%; left: 90%; width:  9%; height: 5%; border-radius: 50%; }
+            .btn-1 { top: 55%; left: 66%; width:  9%; height: 5%; border-radius: 50%; }
+            .btn-2 { top: 54%; left: 81%; width:  9%; height: 5%; border-radius: 50%; }
+            .btn-3 { top: 52%; left: 95%; width:  9%; height: 5%; border-radius: 50%; }
+            .btn-4 { top: 61%; left: 70%; width:  9%; height: 5%; border-radius: 50%; }
+            .btn-5 { top: 60%; left: 84%; width:  9%; height: 5%; border-radius: 50%; }
+            .btn-6 { top: 58%; left: 98%; width:  9%; height: 5%; border-radius: 50%; }
+            .btn-7 { top: 67%; left: 73%; width:  9%; height: 5%; border-radius: 50%; }
+            .btn-8 { top: 65%; left: 87%; width:  9%; height: 5%; border-radius: 50%; }
+            .btn-9 { top: 64%; left: 102%; width: 9%; height: 5%; border-radius: 50%; }
+          .btn-del { top: 105%; left: 99%; width: 9%; height: 5%; border-radius: 50%; }
+            .btn-0 { top: 103%; left: 125%; width: 9%; height: 5%; border-radius: 50%; }
+     .btn-settings { top: 100%; left: 150%; width: 9%; height: 5%; border-radius: 50%; }
 
         /* Tooltip dizájn */
         .hotspot .tooltip-szoveg {
@@ -287,10 +291,9 @@
             opacity: 1;
         }
 
-        /* Reszponzív beállítások mobilra */
+        /* Reszponzív beállítások mobilra (csak az oszlopok átváltása, nincs felső margó csökkentés) */
         @media (max-width: 768px) {
             .fo-oldal-elrendezes {
-                padding-top: 120px; /* Mobilon nem tolja le feleslegesen sokkal a tartalmat */
                 padding-left: 10px;
                 padding-right: 10px;
             }
@@ -415,7 +418,7 @@
                             <div class="hotspot btn-voldown"><div class="tooltip-szoveg"><strong>Hangerő le</strong><div class="tooltip-elvalaszto"></div>Hangerő csökkentése.</div></div>
                             <div class="hotspot btn-mikrofon">
                                 <div class="tooltip-szoveg">
-                                    <strong>Hangkimenet választás</strong><div class="tooltip-elvalaszto"></div>
+                               شرایط     <strong>Hangkimenet választás</strong><div class="tooltip-elvalaszto"></div>
                                     1 kattintás: Keresés<br>
                                     2 kattintás: Bluetooth váltás
                                 </div>
