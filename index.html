@@ -2,6 +2,7 @@
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interaktív Távirányító a Garázsban</title>
     <style>
         body {
@@ -15,9 +16,10 @@
             background-color: #111;
             font-family: sans-serif;
             color: #fff;
+            overflow-x: hidden;
         }
 
-        /* Fő konténer: Minden elemet egy oszlopba rendez középre + 400px eltolás felülről */
+        /* Fő konténer: reszponzív felső eltolással */
         .fo-oldal-elrendezes {
             display: flex;
             flex-direction: column;
@@ -25,43 +27,50 @@
             justify-content: center;
             max-width: 1400px;
             margin: 0 auto;
-            padding: 440px 20px 100px 20px; /* 400px-rel növelve a felső padding, hogy megmaradjon a lenti 400px eltolás */
+            padding: 440px 15px 100px 15px;
             box-sizing: border-box;
             position: relative;
             z-index: 2;
             width: 100%;
         }
 
-        /* Legfelső szakasz (Táp csatlakozó) */
-        .tap-csatlakozo-szekcio {
+        /* Legfelső szakasz / Dobozok alapstílusa */
+        .tap-csatlakozo-szekcio, .also-tartalom-doboz {
             width: 100%;
             max-width: 1300px;
-            background: linear-gradient(135deg, rgba(18, 22, 34, 0.85) 0%, rgba(10, 13, 20, 0.95) 100%);
+            background: linear-gradient(135deg, rgba(18, 22, 34, 0.9) 0%, rgba(10, 13, 20, 0.95) 100%);
             border: 1px solid rgba(96, 165, 250, 0.3);
             border-left: 4px solid #60a5fa;
             border-radius: 10px;
-            padding: 25px 20px;
+            padding: 20px 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
             box-sizing: border-box;
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .tap-beep-kep {
+        .tap-beep-kep, .tav-cimkep {
             width: 100%;
             max-width: 1200px;
             height: auto;
             display: block;
-            margin: 0 auto 25px auto;
+            margin: 0 auto 20px auto;
             object-fit: contain;
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8));
+        }
+
+        .tav-cimkep {
+            max-width: 500px;
+            margin-bottom: 25px;
         }
 
         .kepek-racs {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 40px;
+            gap: 30px;
             width: 100%;
         }
 
@@ -73,7 +82,7 @@
             background: rgba(10, 13, 20, 0.7);
             border: 1px solid rgba(96, 165, 250, 0.3);
             border-radius: 8px;
-            padding: 25px;
+            padding: 15px;
             width: 100%;
             max-width: 1200px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
@@ -91,7 +100,7 @@
 
         .kep-elem p {
             margin: 15px 0 0 0;
-            font-size: 20px;
+            font-size: 18px;
             color: #ffffff;
             font-family: sans-serif;
             font-weight: bold;
@@ -99,64 +108,39 @@
             text-align: center;
             letter-spacing: 0.5px;
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.9) 100%);
-            padding: 18px 20px;
+            padding: 15px;
             border-radius: 8px;
-            border: 1px solid rgba(0, 0, 250, 0.3);
+            border: 1px solid rgba(96, 165, 250, 0.3);
             border-bottom: 4px solid #60a5fa;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
             box-sizing: border-box;
         }
 
-        /* --- ALSÓ TARTALOM EGYSÉGES DOBOZBAN --- */
-        .also-tartalom-doboz {
-            width: 100%;
-            max-width: 1300px;
-            background: linear-gradient(135deg, rgba(18, 22, 34, 0.85) 0%, rgba(10, 13, 20, 0.95) 100%);
-            border: 1px solid rgba(96, 165, 250, 0.3);
-            border-left: 4px solid #60a5fa;
-            border-radius: 10px;
-            padding: 25px 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-            box-sizing: border-box;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .tav-cimkep {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            display: block;
-            margin: 0 auto 35px auto;
-            object-fit: contain;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8));
-        }
-
+        /* Alsó tartalom elrendezése */
         .also-tartalom {
             display: flex;
             flex-direction: row;
             justify-content: center;
-            align-items: center;
-            gap: 40px;
+            align-items: flex-start;
+            gap: 30px;
             width: 100%;
             flex-wrap: wrap;
         }
 
-        /* BAL OSZLOP: Távirányító */
         .bal-oszlop {
             display: flex;
             flex-direction: column;
             align-items: center;
             flex-shrink: 0;
             width: 100%;
-            max-width: 650px;
+            max-width: 550px;
         }
 
         .kep-kontener {
             position: relative;
             display: inline-block;
             width: 100%;
-            max-width: 650px; 
+            max-width: 550px; 
         }
 
         .alap-kep {
@@ -175,14 +159,13 @@
             pointer-events: auto; 
         }
 
-        /* JOBB OSZLOP: Szöveges dobozok */
         .jobb-oszlop {
             flex: 1;
             min-width: 280px;
-            max-width: 500px;
+            max-width: 550px;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 15px;
             text-align: left;
         }
 
@@ -192,15 +175,9 @@
             border: 1px solid rgba(96, 165, 250, 0.3);
             border-left: 4px solid #60a5fa;
             border-radius: 10px;
-            padding: 16px 20px;
+            padding: 15px 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
             box-sizing: border-box;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-
-        .leiras-doboz:hover {
-            border-color: rgba(96, 165, 250, 0.6);
-            transform: translateY(-2px);
         }
 
         .leiras-doboz h2 {
@@ -210,23 +187,19 @@
             letter-spacing: 0.5px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             padding-bottom: 6px;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
 
         .leiras-doboz p, .leiras-doboz li {
-            font-size: 16px;
+            font-size: 15px;
             line-height: 1.45;
             color: #e2e8f0;
+            margin: 5px 0;
         }
 
         .leiras-doboz ul {
-            padding-left: 16px;
-            margin-top: 6px;
-            margin-bottom: 0;
-        }
-
-        .leiras-doboz li {
-            margin-bottom: 4px;
+            padding-left: 18px;
+            margin: 5px 0 0 0;
         }
 
         .leiras-doboz.figyelmeztetes {
@@ -237,13 +210,13 @@
             color: #f87171;
         }
 
-        /* --- ÉRZÉKELÉSI PONTOK (HOTSPOTOK) --- */
+        /* Hotspotok */
         .hotspot {
             position: absolute;
             cursor: pointer;
             border-radius: 30%;
-            background-color: rgba(255, 0, 0, 0.2); 
-            border: 2px solid yellow; 
+            background-color: rgba(255, 255, 0, 0.15); 
+            border: 1px solid rgba(255, 255, 0, 0.4); 
             pointer-events: auto; 
         }
 
@@ -278,37 +251,35 @@
         .btn-0 { top: 103%; left: 125%; width: 14%; height: 6%; border-radius: 50%; }
         .btn-settings { top: 100%; left: 150%; width: 14%; height: 6%; border-radius: 50%; }
 
-        /* --- BUBORÉK (TOOLTIP) DIZÁJN --- */
+        /* Tooltip dizájn */
         .hotspot .tooltip-szoveg {
             visibility: hidden;
-            width: max-content; 
-            max-width: 260px;    
+            width: max-width; 
+            max-width: 240px;    
             white-space: normal; 
-            background-color: rgba(0, 0, 205, 0.9);
+            background-color: rgba(15, 23, 42, 0.95);
             color: #fff;
             text-align: left;
             border-radius: 6px;
-            padding: 10px 14px;
+            padding: 10px 12px;
             position: absolute;
             z-index: 100;
-            
             top: 50%;
             left: 105%;
             transform: translateY(-50%);
-
             opacity: 0;
-            transition: opacity 0.25s ease, transform 0.25s ease;
-            font-size: 14px;
+            transition: opacity 0.2s ease;
+            font-size: 13px;
             line-height: 1.4;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.6);
             pointer-events: none;
-            border: 1px solid rgba(255,255,255,0.15);
+            border: 1px solid rgba(96, 165, 250, 0.4);
         }
 
         .tooltip-elvalaszto {
-            height: 2px;
+            height: 1px;
             background-color: rgba(255, 255, 255, 0.2);
-            margin: 6px 0;
+            margin: 5px 0;
         }
 
         .hotspot:hover .tooltip-szoveg {
@@ -316,10 +287,12 @@
             opacity: 1;
         }
 
-        /* --- MOBIL / RESZPONZÍV BEÁLLÍTÁSOK --- */
-        @media (max-width: 900px) {
+        /* Reszponzív beállítások mobilra */
+        @media (max-width: 768px) {
             .fo-oldal-elrendezes {
-                padding-top: 150px; /* Mobilon kisebb felső eltolás is elegendő lehet, de a kért 400px megmarad desktopon */
+                padding-top: 120px; /* Mobilon nem tolja le feleslegesen sokkal a tartalmat */
+                padding-left: 10px;
+                padding-right: 10px;
             }
             .also-tartalom {
                 flex-direction: column;
@@ -329,12 +302,10 @@
                 width: 100%;
                 max-width: 100%;
             }
-            /* Mobilon a tooltipek jobban látszódnak, ha nemlógnak ki a képernyőből */
             .hotspot .tooltip-szoveg {
-                left: auto;
-                right: 0;
-                top: 120%;
-                transform: none;
+                left: 50%;
+                top: 110%;
+                transform: translateX(-50%);
             }
         }
     </style>
@@ -362,16 +333,16 @@
                 </div>
                 <div class="kep-elem">
                     <img src="4.jpg" alt="4. lépés">
-                    <p>Kész furat. Célszeű több lépcsőben fúrni 3mm > 5mm > 8mm. A 8mm esnél két oldalról fúrd, így nem kell sorjáznod.</p>
+                    <p>Kész furat. Célszerű több lépcsőben fúrni 3mm > 5mm > 8mm. A 8mm esnél két oldalról fúrd, így nem kell sorjáznod.</p>
                 </div>
                 <div class="kep-elem">
                     <img src="5.jpg" alt="5. lépés">
-                    <p>Csatlakozó beszerelve. Kombinát fogóval húzd meg (ésszel), vigyázz a festésre.</p>
+                    <p>Csatlakozó beszerelve. Kombinált fogóval húzd meg (ésszel), vigyázz a festésre.</p>
                 </div>
             </div>
         </div>
 
-        <!-- 2. BLOKK: Tápelosztó beépítése (6-10.jpg) -->
+        <!-- 2. BLOKK: Tápelosztó beépítése -->
         <div class="tap-csatlakozo-szekcio">
             <img src="tapeloszto.png" alt="Tápelosztó beépítése" class="tap-beep-kep">
             
@@ -390,7 +361,7 @@
                 </div>
                 <div class="kep-elem">
                     <img src="9.jpg" alt="9. lépés">
-                    <p>Gyári A kábel átalakítva / B a gyárikapcsoló helyett szolgál (opcionális).</p>
+                    <p>Gyári A kábel átalakítva / B a gyári kapcsoló helyett szolgál (opcionális).</p>
                 </div>
                 <div class="kep-elem">
                     <img src="10.jpg" alt="10. lépés">
@@ -399,7 +370,7 @@
             </div>
         </div>
 
-        <!-- 3. BLOKK: Egységes Nagy Doboz a Távirányítónak és a Leírásoknak -->
+        <!-- 3. BLOKK: Távirányító és Leírások Egységes Doboza -->
         <div class="also-tartalom-doboz">
             <img src="tavkapcs.png" alt="Interaktív Távirányító" class="tav-cimkep">
             
@@ -419,62 +390,62 @@
                                     FONTOS: Linux alapú gép, áramtalanítás előtt leállítás szükséges!
                                 </div>
                             </div>
-                            <div class="hotspot btn-pgplus"><div class="tooltip-szoveg"><strong>Motor +</strong><br><div class="tooltip-elvalaszto"></div> Motor előre.</div></div>
+                            <div class="hotspot btn-pgplus"><div class="tooltip-szoveg"><strong>Motor +</strong><div class="tooltip-elvalaszto"></div>Motor előre.</div></div>
                             <div class="hotspot btn-airmouse">
                                 <div class="tooltip-szoveg">
-                                    <strong>Ami mindent elronthat !!</strong><br><div class="tooltip-elvalaszto"></div>
+                                    <strong>Ami mindent elronthat !!</strong><div class="tooltip-elvalaszto"></div>
                                     Elronthatja a gombkezelést, ellenőrizd a leírásban!
                                 </div>
                             </div>  
-                            <div class="hotspot btn-pgminus"><div class="tooltip-szoveg"><strong>Motor -</strong><br><div class="tooltip-elvalaszto"></div> Motor hátra.</div></div>
-                            <div class="hotspot btn-up"><div class="tooltip-szoveg"><strong>Fel</strong><br><div class="tooltip-elvalaszto"></div> Menüben navigáció felfelé.</div></div>
-                            <div class="hotspot btn-down"><div class="tooltip-szoveg"><strong>Le</strong><br><div class="tooltip-elvalaszto"></div> Menüben navigáció lefelé.</div></div>
-                            <div class="hotspot btn-left"><div class="tooltip-szoveg"><strong>Balra</strong><br><div class="tooltip-elvalaszto"></div> Menüben navigáció balra.</div></div>
-                            <div class="hotspot btn-right"><div class="tooltip-szoveg"><strong>Jobbra</strong><br><div class="tooltip-elvalaszto"></div> Menüben navigáció jobbra.</div></div>
-                            <div class="hotspot btn-ok"><div class="tooltip-szoveg"><strong>OK</strong><br><div class="tooltip-elvalaszto"></div> ENTER / Kiválasztás / Videók indítása.</div></div>
-                            <div class="hotspot btn-vissza"><div class="tooltip-szoveg"><strong>Vissza</strong><br><div class="tooltip-elvalaszto"></div> Visszalépés a menübe.</div></div>
+                            <div class="hotspot btn-pgminus"><div class="tooltip-szoveg"><strong>Motor -</strong><div class="tooltip-elvalaszto"></div>Motor hátra.</div></div>
+                            <div class="hotspot btn-up"><div class="tooltip-szoveg"><strong>Fel</strong><div class="tooltip-elvalaszto"></div>Menüben navigáció felfelé.</div></div>
+                            <div class="hotspot btn-down"><div class="tooltip-szoveg"><strong>Le</strong><div class="tooltip-elvalaszto"></div>Menüben navigáció lefelé.</div></div>
+                            <div class="hotspot btn-left"><div class="tooltip-szoveg"><strong>Balra</strong><div class="tooltip-elvalaszto"></div>Menüben navigáció balra.</div></div>
+                            <div class="hotspot btn-right"><div class="tooltip-szoveg"><strong>Jobbra</strong><div class="tooltip-elvalaszto"></div>Menüben navigáció jobbra.</div></div>
+                            <div class="hotspot btn-ok"><div class="tooltip-szoveg"><strong>OK</strong><div class="tooltip-elvalaszto"></div>ENTER / Kiválasztás / Videók indítása.</div></div>
+                            <div class="hotspot btn-vissza"><div class="tooltip-szoveg"><strong>Vissza</strong><div class="tooltip-elvalaszto"></div>Visszalépés a menübe.</div></div>
                             <div class="hotspot btn-home">
                                 <div class="tooltip-szoveg">
-                                    <strong>Főmenü/Home</strong><br><div class="tooltip-elvalaszto"></div>
+                                    <strong>Főmenü/Home</strong><div class="tooltip-elvalaszto"></div>
                                     1 kattintás: Kezdőképernyő<br>
                                     2 kattintás: Újraindítás<br>
                                     3 kattintás: Teljes reset
                                 </div>
                             </div>
-                            <div class="hotspot btn-voldown"><div class="tooltip-szoveg"><strong>Hangerő le</strong><br><div class="tooltip-elvalaszto"></div> Hangerő csökkentése.</div></div>
+                            <div class="hotspot btn-voldown"><div class="tooltip-szoveg"><strong>Hangerő le</strong><div class="tooltip-elvalaszto"></div>Hangerő csökkentése.</div></div>
                             <div class="hotspot btn-mikrofon">
                                 <div class="tooltip-szoveg">
-                                    <strong>Hangkimenet választás</strong><br><div class="tooltip-elvalaszto"></div>
+                                    <strong>Hangkimenet választás</strong><div class="tooltip-elvalaszto"></div>
                                     1 kattintás: Keresés<br>
                                     2 kattintás: Bluetooth váltás
                                 </div>
                             </div>
-                            <div class="hotspot btn-volup"><div class="tooltip-szoveg"><strong>Hangerő fel</strong><br><div class="tooltip-elvalaszto"></div> Hangerő növelése.</div></div>
-                            <div class="hotspot btn-prev"><div class="tooltip-szoveg"><strong>Előző szám</strong><br><div class="tooltip-elvalaszto"></div> Visszafelé ugrás.</div></div>
+                            <div class="hotspot btn-volup"><div class="tooltip-szoveg"><strong>Hangerő fel</strong><div class="tooltip-elvalaszto"></div>Hangerő növelése.</div></div>
+                            <div class="hotspot btn-prev"><div class="tooltip-szoveg"><strong>Előző szám</strong><div class="tooltip-elvalaszto"></div>Visszafelé ugrás.</div></div>
                             <div class="hotspot btn-play">
                                 <div class="tooltip-szoveg">
-                                    <strong>Menü / Lejátszás</strong><br><div class="tooltip-elvalaszto"></div>
+                                    <strong>Menü / Lejátszás</strong><div class="tooltip-elvalaszto"></div>
                                     1 katt: Normál<br>
                                     2 katt: Végtelen loop
                                 </div>
                             </div>
-                            <div class="hotspot btn-next"><div class="tooltip-szoveg"><strong>Következő szám</strong><br><div class="tooltip-elvalaszto"></div> Előre ugrás.</div></div>
-                            <div class="hotspot btn-1"><div class="tooltip-szoveg"><strong>1-es gomb</strong><br><div class="tooltip-elvalaszto"></div> Világítás kapcsoló</div></div>
-                            <div class="hotspot btn-2"><div class="tooltip-szoveg"><strong>2-es gomb</strong><br><div class="tooltip-elvalaszto"></div> Alapjárat / Gáz hang</div></div>
-                            <div class="hotspot btn-3"><div class="tooltip-szoveg"><strong>3-as gomb</strong><br><div class="tooltip-elvalaszto"></div> Duda</div></div>
-                            <div class="hotspot btn-4"><div class="tooltip-szoveg"><strong>4-es gomb</strong><br><div class="tooltip-elvalaszto"></div> Bal index</div></div>
-                            <div class="hotspot btn-5"><div class="tooltip-szoveg"><strong>5-ös gomb</strong><br><div class="tooltip-elvalaszto"></div> Vészvillogó</div></div>
-                            <div class="hotspot btn-6"><div class="tooltip-szoveg"><strong>6-os gomb</strong><br><div class="tooltip-elvalaszto"></div> Jobb index</div></div>
-                            <div class="hotspot btn-7"><div class="tooltip-szoveg"><strong>7-es gomb</strong><br><div class="tooltip-elvalaszto"></div> Alváz Neon vezérlés</div></div>
-                            <div class="hotspot btn-8"><div class="tooltip-szoveg"><strong>8-as gomb</strong><br><div class="tooltip-elvalaszto"></div> 2 Neon egyszerre</div></div>
-                            <div class="hotspot btn-9"><div class="tooltip-szoveg"><strong>9-es gomb</strong><br><div class="tooltip-elvalaszto"></div> Csomagtér Neon</div></div>
-                            <div class="hotspot btn-del"><div class="tooltip-szoveg"><strong>DEL Gomb</strong><br><div class="tooltip-elvalaszto"></div> Fék Lámpa</div></div>
-                            <div class="hotspot btn-0"><div class="tooltip-szoveg"><strong>0-ás gomb</strong><br><div class="tooltip-elvalaszto"></div> Tolató Lámpa</div></div>
+                            <div class="hotspot btn-next"><div class="tooltip-szoveg"><strong>Következő szám</strong><div class="tooltip-elvalaszto"></div>Előre ugrás.</div></div>
+                            <div class="hotspot btn-1"><div class="tooltip-szoveg"><strong>1-es gomb</strong><div class="tooltip-elvalaszto"></div>Világítás kapcsoló</div></div>
+                            <div class="hotspot btn-2"><div class="tooltip-szoveg"><strong>2-es gomb</strong><div class="tooltip-elvalaszto"></div>Alapjárat / Gáz hang</div></div>
+                            <div class="hotspot btn-3"><div class="tooltip-szoveg"><strong>3-as gomb</strong><div class="tooltip-elvalaszto"></div>Duda</div></div>
+                            <div class="hotspot btn-4"><div class="tooltip-szoveg"><strong>4-es gomb</strong><div class="tooltip-elvalaszto"></div>Bal index</div></div>
+                            <div class="hotspot btn-5"><div class="tooltip-szoveg"><strong>5-ös gomb</strong><div class="tooltip-elvalaszto"></div>Vészvillogó</div></div>
+                            <div class="hotspot btn-6"><div class="tooltip-szoveg"><strong>6-os gomb</strong><div class="tooltip-elvalaszto"></div>Jobb index</div></div>
+                            <div class="hotspot btn-7"><div class="tooltip-szoveg"><strong>7-es gomb</strong><div class="tooltip-elvalaszto"></div>Alváz Neon vezérlés</div></div>
+                            <div class="hotspot btn-8"><div class="tooltip-szoveg"><strong>8-as gomb</strong><div class="tooltip-elvalaszto"></div>2 Neon egyszerre</div></div>
+                            <div class="hotspot btn-9"><div class="tooltip-szoveg"><strong>9-es gomb</strong><div class="tooltip-elvalaszto"></div>Csomagtér Neon</div></div>
+                            <div class="hotspot btn-del"><div class="tooltip-szoveg"><strong>DEL Gomb</strong><div class="tooltip-elvalaszto"></div>Fék Lámpa</div></div>
+                            <div class="hotspot btn-0"><div class="tooltip-szoveg"><strong>0-ás gomb</strong><div class="tooltip-elvalaszto"></div>Tolató Lámpa</div></div>
                             <div class="hotspot btn-settings"><div class="tooltip-szoveg"><strong>Ködlámpa / Háttérvilágítás</strong>
-                            <br><div class="tooltip-elvalaszto"></div>Rövid nyomás - ködlámpa.
+                            <div class="tooltip-elvalaszto"></div>Rövid nyomás - ködlámpa.
                             <br>(Kiegészítő panel szükséges)
-                            <br><div class="tooltip-elvalaszto"></div> Hosszú nyomás - Írányitó háttérvilágítás ki / be kapcsolás.
-                            <br>Kék: Gombnyomásra világít kb 5mp ig.
+                            <div class="tooltip-elvalaszto"></div>Hosszú nyomás - Háttérvilágítás ki / be.
+                            <br>Kék: Gombnyomásra világít 5mp-ig.
                             <br>Fehér: Folyamatosan világít.</div></div>
                         </div>
                     </div>
