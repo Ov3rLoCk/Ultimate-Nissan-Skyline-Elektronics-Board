@@ -22,18 +22,18 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            max-width: 2200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 480px 20px 100px 20px;
+            padding: 40px 20px 100px 20px;
             box-sizing: border-box;
             position: relative;
             z-index: 2;
         }
 
-        /* Legfelső szakasz (Táp csatlakozó): Teljes szélességben középen */
+        /* Legfelső szakasz (Táp csatlakozó) */
         .tap-csatlakozo-szekcio {
-            width: 150%;
-            max-width: 2210px;
+            width: 100%;
+            max-width: 1300px;
             background: linear-gradient(135deg, rgba(18, 22, 34, 0.85) 0%, rgba(10, 13, 20, 0.95) 100%);
             border: 1px solid rgba(96, 165, 250, 0.3);
             border-left: 4px solid #60a5fa;
@@ -47,7 +47,7 @@
 
         .tap-beep-kep {
             width: 100%;
-            max-width: 1100px;
+            max-width: 1200px;
             height: auto;
             display: block;
             margin: 0 auto 25px auto;
@@ -59,7 +59,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 65px;
+            gap: 40px;
+            width: 100%;
         }
 
         .kep-elem {
@@ -72,14 +73,14 @@
             border-radius: 8px;
             padding: 25px;
             width: 100%;
-            max-width: 1700px;
+            max-width: 1200px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
             box-sizing: border-box;
         }
 
         .kep-elem img {
             width: 100%;
-            max-width: 1640px;
+            max-width: 100%;
             height: auto;
             object-fit: cover;
             border-radius: 6px;
@@ -87,29 +88,27 @@
         }
 
         .kep-elem p {
-    	margin: 15px 0 0 0;
-    	font-size: 24px;16:43 2026. 09. 21.
-    	color: #ffffff;
-    	font-family: sans-serif;
-    	font-weight: bold;
-    	width: calc(100% - 40px);
-    	text-align: center;
-    	letter-spacing: 0.5px;
-    
-    	/* Dizájnos háttérdoboz a kép alatt */
-    	background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.9) 100%);
-    	padding: 18px 20px;
-    	border-radius: 8px;
-    	border: 1px solid rgba(0, 0, 250, 0.3);
-    	border-bottom: 4px solid #60a5fa; /* Vastagabb, világító kék alsó szegély */
-    	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-    	box-sizing: border-box;
-	}
+            margin: 15px 0 0 0;
+            font-size: 20px;
+            color: #ffffff;
+            font-family: sans-serif;
+            font-weight: bold;
+            width: 100%;
+            text-align: center;
+            letter-spacing: 0.5px;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.9) 100%);
+            padding: 18px 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 0, 250, 0.3);
+            border-bottom: 4px solid #60a5fa;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+            box-sizing: border-box;
+        }
 
         /* --- ALSÓ TARTALOM EGYSÉGES DOBOZBAN --- */
         .also-tartalom-doboz {
-            width: 150%;
-            max-width: 2210px;
+            width: 100%;
+            max-width: 1300px;
             background: linear-gradient(135deg, rgba(18, 22, 34, 0.85) 0%, rgba(10, 13, 20, 0.95) 100%);
             border: 1px solid rgba(96, 165, 250, 0.3);
             border-left: 4px solid #60a5fa;
@@ -118,12 +117,12 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
             box-sizing: border-box;
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 30px;
         }
 
         .tav-cimkep {
             width: 100%;
-            max-width: 1100px;
+            max-width: 500px;
             height: auto;
             display: block;
             margin: 0 auto 35px auto;
@@ -131,14 +130,14 @@
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8));
         }
 
-        /* Alsó tartalom belső elrendezés: Két oszlop (Balra távirányító, jobbra a szövegek) */
         .also-tartalom {
             display: flex;
             flex-direction: row;
             justify-content: center;
             align-items: flex-start;
-            gap: 100px;
+            gap: 40px;
             width: 100%;
+            flex-wrap: wrap;
         }
 
         /* BAL OSZLOP: Távirányító */
@@ -152,7 +151,8 @@
         .kep-kontener {
             position: relative;
             display: inline-block;
-            width: 900px; 
+            width: 100%;
+            max-width: 1950px; 
         }
 
         .alap-kep {
@@ -173,12 +173,12 @@
 
         /* JOBB OSZLOP: Szöveges dobozok */
         .jobb-oszlop {
-            width: 100%;
-            max-width: 1220px; 
-            flex-shrink: 0;
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 10px;
             text-align: left;
         }
 
@@ -210,7 +210,7 @@
         }
 
         .leiras-doboz p, .leiras-doboz li {
-            font-size: 20px;
+            font-size: 16px;
             line-height: 1.45;
             color: #e2e8f0;
         }
@@ -234,53 +234,54 @@
         }
 
         /* --- ÉRZÉKELÉSI PONTOK (HOTSPOTOK) --- */
+        /* Megjegyzés: A százalékos pozicionálás stabilabbá teszi a méretezést képméret váltáskor is */
         .hotspot {
             position: absolute;
             cursor: pointer;
             border-radius: 30%;
-            background-color: rgba(255, 0, 0, 0.4); 
+            background-color: rgba(255, 0, 0, 0.2); 
             border: 2px solid yellow; 
             pointer-events: auto; 
         }
 
-        .btn-power { top: 135px; left: 100px; width: 65px; height: 65px; border-radius: 50%; }
-        .btn-nema { top: 80px; left: 320px; width: 65px; height: 65px; border-radius: 50%; }
-        .btn-pgplus { top: 232px; left: 130px; width: 65px; height: 65px; border-radius: 50%; }
-        .btn-airmouse { top: 205px; left: 242px; width: 65px; height: 65px; border-radius: 50%; }  
-        .btn-pgminus { top: 175px; left: 355px; width: 65px; height: 65px; border-radius: 50%; }
-        .btn-up { top: 295px; left: 280px; width: 38px; height: 38px; border-radius: 50%; }
-        .btn-down { top: 380px; left: 295px; width: 38px; height: 38px; border-radius: 50%; }
-        .btn-left { top: 345px; left: 235px; width: 38px; height: 38px; border-radius: 50%; }
-        .btn-right { top: 335px; left: 345px; width: 38px; height: 38px; border-radius: 50%; }
-        .btn-ok { top: 310px; left: 275px; width: 70px; height: 70px; border-radius: 50%; }
-        .btn-vissza { top: 445px; left: 280px; width: 38px; height: 38px; border-radius: 30%; }
-        .btn-home { top: 430px; left: 345px; width: 38px; height: 38px; border-radius: 30%; }
-        .btn-voldown { top: 505px; left: 265px; width: 40px; height: 40px; border-radius: 50%; }
-        .btn-mikrofon { top: 490px; left: 325px; width: 40px; height: 40px; border-radius: 50%; }
-        .btn-volup { top: 475px; left: 385px; width: 40px; height: 40px; border-radius: 50%; }
-        .btn-prev { top: 560px; left: 280px; width: 40px; height: 40px; border-radius: 50%; }
-        .btn-play { top: 545px; left: 345px; width: 40px; height: 40px; border-radius: 50%; }
-        .btn-next { top: 530px; left: 410px; width: 40px; height: 40px; border-radius: 50%; }
-        .btn-1 { top: 620px; left: 300px; width: 65px; height: 65px; border-radius: 50%; }
-        .btn-2 { top: 605px; left: 365px; width: 65px; height: 65px; border-radius: 50%; }
-        .btn-3 { top: 590px; left: 430px; width: 65px; height: 65px; border-radius: 50%; }
-        .btn-4 { top: 685px; left: 315px; width: 65px; height: 65px; border-radius: 50%; }
-        .btn-5 { top: 670px; left: 380px; width: 65px; height: 65px; border-radius: 50%; }
-        .btn-6 { top: 655px; left: 445px; width: 65px; height: 65px; border-radius: 50%; }
-        .btn-7 { top: 750px; left: 330px; width: 65px; height: 65px; border-radius: 50%; }
-        .btn-8 { top: 735px; left: 395px; width: 65px; height: 65px; border-radius: 50%; }
-        .btn-9 { top: 720px; left: 460px; width: 65px; height: 65px; border-radius: 50%; }
-        .btn-del { top: 1180px; left: 448px; width: 65px; height: 65px; border-radius: 50%; }
-        .btn-0 { top: 1150px; left: 565px; width: 65px; height: 65px; border-radius: 50%; }
-        .btn-settings { top: 1123px; left: 682px; width: 65px; height: 65px; border-radius: 50%; }
+        .btn-power { top: 12%; left: 22%; width: 14%; height: 7%; border-radius: 50%; }
+        .btn-nema { top: 7%; left: 71%; width: 14%; height: 7%; border-radius: 50%; }
+        .btn-pgplus { top: 21%; left: 29%; width: 14%; height: 7%; border-radius: 50%; }
+        .btn-airmouse { top: 18%; left: 54%; width: 14%; height: 7%; border-radius: 50%; }  
+        .btn-pgminus { top: 15%; left: 79%; width: 14%; height: 7%; border-radius: 50%; }
+        .btn-up { top: 26%; left: 62%; width: 8%; height: 4%; border-radius: 50%; }
+        .btn-down { top: 34%; left: 65%; width: 8%; height: 4%; border-radius: 50%; }
+        .btn-left { top: 31%; left: 52%; width: 8%; height: 4%; border-radius: 50%; }
+        .btn-right { top: 30%; left: 76%; width: 8%; height: 4%; border-radius: 50%; }
+        .btn-ok { top: 28%; left: 61%; width: 15%; height: 7%; border-radius: 50%; }
+        .btn-vissza { top: 40%; left: 62%; width: 8%; height: 4%; border-radius: 30%; }
+        .btn-home { top: 39%; left: 76%; width: 8%; height: 4%; border-radius: 30%; }
+        .btn-voldown { top: 45%; left: 59%; width: 9%; height: 4%; border-radius: 50%; }
+        .btn-mikrofon { top: 44%; left: 72%; width: 9%; height: 4%; border-radius: 50%; }
+        .btn-volup { top: 42%; left: 85%; width: 9%; height: 4%; border-radius: 50%; }
+        .btn-prev { top: 50%; left: 62%; width: 9%; height: 4%; border-radius: 50%; }
+        .btn-play { top: 49%; left: 76%; width: 9%; height: 4%; border-radius: 50%; }
+        .btn-next { top: 47%; left: 90%; width: 9%; height: 4%; border-radius: 50%; }
+        .btn-1 { top: 55%; left: 66%; width: 14%; height: 6%; border-radius: 50%; }
+        .btn-2 { top: 54%; left: 81%; width: 14%; height: 6%; border-radius: 50%; }
+        .btn-3 { top: 52%; left: 95%; width: 14%; height: 6%; border-radius: 50%; }
+        .btn-4 { top: 61%; left: 70%; width: 14%; height: 6%; border-radius: 50%; }
+        .btn-5 { top: 60%; left: 84%; width: 14%; height: 6%; border-radius: 50%; }
+        .btn-6 { top: 58%; left: 98%; width: 14%; height: 6%; border-radius: 50%; }
+        .btn-7 { top: 67%; left: 73%; width: 14%; height: 6%; border-radius: 50%; }
+        .btn-8 { top: 65%; left: 87%; width: 14%; height: 6%; border-radius: 50%; }
+        .btn-9 { top: 64%; left: 102%; width: 14%; height: 6%; border-radius: 50%; }
+        .btn-del { top: 105%; left: 99%; width: 14%; height: 6%; border-radius: 50%; }
+        .btn-0 { top: 103%; left: 125%; width: 14%; height: 6%; border-radius: 50%; }
+        .btn-settings { top: 100%; left: 150%; width: 14%; height: 6%; border-radius: 50%; }
 
         /* --- BUBORÉK (TOOLTIP) DIZÁJN --- */
         .hotspot .tooltip-szoveg {
             visibility: hidden;
             width: max-content; 
-            max-width: 580px;    
+            max-width: 300px;    
             white-space: normal; 
-            background-color: rgba(0, 0, 205, 0.72);
+            background-color: rgba(0, 0, 205, 0.9);
             color: #fff;
             text-align: left;
             border-radius: 6px;
@@ -289,13 +290,12 @@
             z-index: 100;
             
             top: 50%;
-            left: 100%;
+            left: 105%;
             transform: translateY(-50%);
-            margin-left: 15px;
 
             opacity: 0;
             transition: opacity 0.25s ease, transform 0.25s ease;
-            font-size: 20px;
+            font-size: 14px;
             line-height: 1.4;
             box-shadow: 0 4px 12px rgba(0,0,0,0.5);
             pointer-events: none;
@@ -308,21 +308,9 @@
             margin: 6px 0;
         }
 
-        .hotspot .tooltip-szoveg::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            right: 100%;
-            margin-top: -4px;
-            border-width: 4px;
-            border-style: solid;
-            border-color: transparent rgba(0, 0, 205, 0.92) transparent transparent;
-        }
-
         .hotspot:hover .tooltip-szoveg {
             visibility: visible;
             opacity: 1;
-            transform: translateY(-50%);
         }
     </style>
 </head>
@@ -388,7 +376,6 @@
 
         <!-- 3. BLOKK: Egységes Nagy Doboz a Távirányítónak és a Leírásoknak -->
         <div class="also-tartalom-doboz">
-            <!-- Távirányító logo/címkép középen -->
             <img src="tavkapcs.png" alt="Interaktív Távirányító" class="tav-cimkep">
             
             <div class="also-tartalom">
@@ -459,11 +446,11 @@
                             <div class="hotspot btn-del"><div class="tooltip-szoveg"><strong>DEL Gomb</strong><br><div class="tooltip-elvalaszto"></div> Fék Lámpa</div></div>
                             <div class="hotspot btn-0"><div class="tooltip-szoveg"><strong>0-ás gomb</strong><br><div class="tooltip-elvalaszto"></div> Tolató Lámpa</div></div>
                             <div class="hotspot btn-settings"><div class="tooltip-szoveg"><strong>Ködlámpa / Háttérvilágítás</strong>
-			    <br><div class="tooltip-elvalaszto"></div>Rövid nyomás - ködlámpa.
-			    <br>(Kiegészítő panel szükséges)
-			    <br><div class="tooltip-elvalaszto"></div> Hosszú nyomás - Írányitó háttérvilágítás ki / be kapcsolás.
-			    <br>Kék: Gombnyomásra világít kb 5mp ig.
-			    <br>Fehér: Folyamatosan világít.</div></div>
+                            <br><div class="tooltip-elvalaszto"></div>Rövid nyomás - ködlámpa.
+                            <br>(Kiegészítő panel szükséges)
+                            <br><div class="tooltip-elvalaszto"></div> Hosszú nyomás - Írányitó háttérvilágítás ki / be kapcsolás.
+                            <br>Kék: Gombnyomásra világít kb 5mp ig.
+                            <br>Fehér: Folyamatosan világít.</div></div>
                         </div>
                     </div>
                 </div>
@@ -527,10 +514,6 @@
             </div>
         </div>
 
-    </div>
-
-</body>
-</html>
     </div>
 
 </body>
