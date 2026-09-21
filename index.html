@@ -17,17 +17,19 @@
             color: #fff;
         }
 
-        /* Fő konténer: Minden elemet egy oszlopba rendez középre */
+        /* Fő konténer: Minden elemet egy oszlopba rendez középre + 400px eltolás felülről */
         .fo-oldal-elrendezes {
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             max-width: 1400px;
             margin: 0 auto;
-            padding: 40px 20px 100px 20px;
+            padding: 440px 20px 100px 20px; /* 400px-rel növelve a felső padding, hogy megmaradjon a lenti 400px eltolás */
             box-sizing: border-box;
             position: relative;
             z-index: 2;
+            width: 100%;
         }
 
         /* Legfelső szakasz (Táp csatlakozó) */
@@ -134,7 +136,7 @@
             display: flex;
             flex-direction: row;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center;
             gap: 40px;
             width: 100%;
             flex-wrap: wrap;
@@ -146,13 +148,15 @@
             flex-direction: column;
             align-items: center;
             flex-shrink: 0;
+            width: 100%;
+            max-width: 650px;
         }
 
         .kep-kontener {
             position: relative;
             display: inline-block;
             width: 100%;
-            max-width: 1950px; 
+            max-width: 650px; 
         }
 
         .alap-kep {
@@ -174,7 +178,7 @@
         /* JOBB OSZLOP: Szöveges dobozok */
         .jobb-oszlop {
             flex: 1;
-            min-width: 300px;
+            min-width: 280px;
             max-width: 500px;
             display: flex;
             flex-direction: column;
@@ -234,7 +238,6 @@
         }
 
         /* --- ÉRZÉKELÉSI PONTOK (HOTSPOTOK) --- */
-        /* Megjegyzés: A százalékos pozicionálás stabilabbá teszi a méretezést képméret váltáskor is */
         .hotspot {
             position: absolute;
             cursor: pointer;
@@ -279,7 +282,7 @@
         .hotspot .tooltip-szoveg {
             visibility: hidden;
             width: max-content; 
-            max-width: 300px;    
+            max-width: 260px;    
             white-space: normal; 
             background-color: rgba(0, 0, 205, 0.9);
             color: #fff;
@@ -311,6 +314,28 @@
         .hotspot:hover .tooltip-szoveg {
             visibility: visible;
             opacity: 1;
+        }
+
+        /* --- MOBIL / RESZPONZÍV BEÁLLÍTÁSOK --- */
+        @media (max-width: 900px) {
+            .fo-oldal-elrendezes {
+                padding-top: 150px; /* Mobilon kisebb felső eltolás is elegendő lehet, de a kért 400px megmarad desktopon */
+            }
+            .also-tartalom {
+                flex-direction: column;
+                align-items: center;
+            }
+            .jobb-oszlop {
+                width: 100%;
+                max-width: 100%;
+            }
+            /* Mobilon a tooltipek jobban látszódnak, ha nemlógnak ki a képernyőből */
+            .hotspot .tooltip-szoveg {
+                left: auto;
+                right: 0;
+                top: 120%;
+                transform: none;
+            }
         }
     </style>
 </head>
