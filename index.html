@@ -27,7 +27,7 @@
             justify-content: center;
             max-width: 1400px;
             margin: 0 auto;
-            padding: 440px 15px 100px 15px;
+            padding: 340px 15px 100px 15px;
             box-sizing: border-box;
             position: relative;
             z-index: 2;
@@ -51,9 +51,9 @@
             margin-right: auto;
         }
 
-        .tap-beep-kep, .tav-cimkep {
+        .tap-beep-kep {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1000px;
             height: auto;
             display: block;
             margin: 0 auto 20px auto;
@@ -62,15 +62,31 @@
         }
 
         .tav-cimkep {
-            max-width: 500px;
-            margin-bottom: 25px;
+            width: 100%;
+            max-width: 1000px;
+            height: auto;
+            display: block;
+            margin: 0 auto 25px auto;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8));
+        }
+
+        /* Új Főmodulok címsor stílusa */
+        .fomodulok-cim {
+            font-size: 24px;
+            color: #60a5fa;
+            margin: 0 0 20px 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
         }
 
         .kepek-racs {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 30px;
+            gap: 25px;
             width: 100%;
         }
 
@@ -155,8 +171,8 @@
 
         .gombok-csoport {
             position: absolute;
-            top: 0;    
-            left: 0;    
+            top: 0;   
+            left: 0;   
             width: 100%;
             height: 100%;
             pointer-events: auto; 
@@ -219,57 +235,55 @@
             position: absolute;
             cursor: pointer;
             border-radius: 30%;
-            background-color: rgba(255, 255, 0, 0.15); 
-            border: 1px solid rgba(255, 255, 0, 0.4); 
             pointer-events: auto; 
         }
 
-        .btn-power { top: 12%; left: 22%; width:  9%; height: 5%; border-radius: 50%; }
-         .btn-nema { top: 7%; left: 71%;  width:  9%; height: 5%; border-radius: 50%; }
-       .btn-pgplus { top: 21%; left: 29%; width:  9%; height: 5%; border-radius: 50%; }
-     .btn-airmouse { top: 18%; left: 54%; width:  9%; height: 5%; border-radius: 50%; }  
-      .btn-pgminus { top: 15%; left: 79%; width:  9%; height: 5%; border-radius: 50%; }
-           .btn-up { top: 26%; left: 62%; width:  9%; height: 5%; border-radius: 50%; }
-         .btn-down { top: 34%; left: 65%; width:  9%; height: 5%; border-radius: 50%; }
-         .btn-left { top: 31%; left: 52%; width:  9%; height: 5%; border-radius: 50%; }
-        .btn-right { top: 30%; left: 76%; width:  9%; height: 5%; border-radius: 50%; }
-           .btn-ok { top: 28%; left: 61%; width: 15%; height: 7%; border-radius: 50%; }
-       .btn-vissza { top: 40%; left: 62%; width:  9%; height: 5%; border-radius: 30%; }
-         .btn-home { top: 39%; left: 76%; width:  9%; height: 5%; border-radius: 30%; }
-      .btn-voldown { top: 45%; left: 59%; width:  9%; height: 5%; border-radius: 50%; }
-     .btn-mikrofon { top: 44%; left: 72%; width:  9%; height: 5%; border-radius: 50%; }
-        .btn-volup { top: 42%; left: 85%; width:  9%; height: 5%; border-radius: 50%; }
-         .btn-prev { top: 50%; left: 62%; width:  9%; height: 5%; border-radius: 50%; }
-         .btn-play { top: 49%; left: 76%; width:  9%; height: 5%; border-radius: 50%; }
-         .btn-next { top: 47%; left: 90%; width:  9%; height: 5%; border-radius: 50%; }
-            .btn-1 { top: 55%; left: 66%; width:  9%; height: 5%; border-radius: 50%; }
-            .btn-2 { top: 54%; left: 81%; width:  9%; height: 5%; border-radius: 50%; }
-            .btn-3 { top: 52%; left: 95%; width:  9%; height: 5%; border-radius: 50%; }
-            .btn-4 { top: 61%; left: 70%; width:  9%; height: 5%; border-radius: 50%; }
-            .btn-5 { top: 60%; left: 84%; width:  9%; height: 5%; border-radius: 50%; }
-            .btn-6 { top: 58%; left: 98%; width:  9%; height: 5%; border-radius: 50%; }
-            .btn-7 { top: 67%; left: 73%; width:  9%; height: 5%; border-radius: 50%; }
-            .btn-8 { top: 65%; left: 87%; width:  9%; height: 5%; border-radius: 50%; }
-            .btn-9 { top: 64%; left: 102%; width: 9%; height: 5%; border-radius: 50%; }
-          .btn-del { top: 105%; left: 99%; width: 9%; height: 5%; border-radius: 50%; }
-            .btn-0 { top: 103%; left: 125%; width: 9%; height: 5%; border-radius: 50%; }
-     .btn-settings { top: 100%; left: 150%; width: 9%; height: 5%; border-radius: 50%; }
+        .btn-power { top:  9.0%; left: 10.7%; width:  7.8%; height: 3.8%; border-radius: 50%; }
+        .btn-nema { top:  5.4%; left: 35.2%; width:  7.8%; height: 3.8%; border-radius: 50%; }
+        .btn-pgplus { top: 15.6%; left: 14.3%; width:  7.8%; height: 3.8%; border-radius: 50%; }
+        .btn-airmouse { top: 13.7%; left: 26.7%; width:  7.8%; height: 3.8%; border-radius: 50%; }  
+        .btn-pgminus { top: 11.9%; left: 39.1%; width:  7.8%; height: 3.8%; border-radius: 50%; }
+        .btn-up { top: 20.7%; left: 31.0%; width:  7.8%; height: 3.8%; border-radius: 50%; }
+        .btn-down { top: 33.6%; left: 38.1%; width:  7.8%; height: 3.8%; border-radius: 50%; }
+        .btn-left { top: 28.8%; left: 22.8%; width:  7.8%; height: 3.8%; border-radius: 50%; }
+        .btn-right { top: 25.5%; left: 46.3%; width:  7.8%; height: 3.8%; border-radius: 50%; }
+        .btn-ok { top: 25.5%; left: 32.0%; width: 13.0%; height: 7.0%; border-radius: 50%; }
+        .btn-vissza { top: 41.1%; left: 32.0%; width:  9.0%; height: 3.0%; border-radius: 30%; }
+        .btn-home { top: 38.5%; left: 49.8%; width:  9.0%; height: 3.0%; border-radius: 30%; }
+        .btn-voldown { top: 48.3%; left: 32.2%; width:  7.8%; height: 3.8%; border-radius: 50%; }
+        .btn-mikrofon { top: 46.4%; left: 45.4%; width:  7.8%; height: 3.8%; border-radius: 50%; }
+        .btn-volup { top: 44.5%; left: 58.4%; width:  7.8%; height: 3.8%; border-radius: 50%; }
+        .btn-prev { top: 55.0%; left: 36.0%; width:  7.8%; height: 3.8%; border-radius: 50%; }
+        .btn-play { top: 53.1%; left: 49.2%; width:  7.8%; height: 3.8%; border-radius: 50%; }
+        .btn-next { top: 51.2%; left: 62.1%; width:  7.8%; height: 3.8%; border-radius: 50%; }
+        .btn-1 { top: 61.6%; left: 40.2%; width:  7.8%; height: 3.8%; border-radius: 50%; }
+        .btn-2 { top: 59.6%; left: 53.1%; width:  7.8%; height: 3.8%; border-radius: 50%; }
+        .btn-3 { top: 57.7%; left: 66.0%; width:  7.8%; height: 3.8%; border-radius: 50%; }
+        .btn-4 { top: 67.2%; left: 43.4%; width:  7.8%; height: 3.8%; border-radius: 50%; }
+        .btn-5 { top: 65.2%; left: 56.3%; width:  7.8%; height: 3.8%; border-radius: 50%; }
+        .btn-6 { top: 63.3%; left: 69.2%; width:  7.8%; height: 3.8%; border-radius: 50%; }
+        .btn-7 { top: 72.8%; left: 46.0%; width:  7.8%; height: 3.8%; border-radius: 50%; }
+        .btn-8 { top: 70.9%; left: 59.3%; width:  7.8%; height: 3.8%; border-radius: 50%; }
+        .btn-9 { top: 68.9%; left: 72.4%; width:  7.8%; height: 3.8%; border-radius: 50%; }
+        .btn-del { top: 78.6%; left: 49.2%; width:  7.8%; height: 3.8%; border-radius: 50%; }
+        .btn-0 { top: 76.5%; left: 62.4%; width:  7.8%; height: 3.8%; border-radius: 50%; }
+        .btn-settings { top: 74.6%; left: 75.5%; width:  7.8%; height: 3.8%; border-radius: 50%; }
 
         /* Tooltip dizájn */
         .hotspot .tooltip-szoveg {
             visibility: hidden;
-            width: max-width; 
-            max-width: 240px;    
+            width: 300px; 
+            max-width: 400px;    
             white-space: normal; 
             background-color: rgba(15, 23, 42, 0.95);
             color: #fff;
             text-align: left;
             border-radius: 6px;
-            padding: 10px 12px;
+            padding: 8px 8px;
             position: absolute;
             z-index: 100;
             top: 50%;
-            left: 105%;
+            left: 100%;
             transform: translateY(-50%);
             opacity: 0;
             transition: opacity 0.2s ease;
@@ -277,7 +291,7 @@
             line-height: 1.4;
             box-shadow: 0 4px 12px rgba(0,0,0,0.6);
             pointer-events: none;
-            border: 1px solid rgba(96, 165, 250, 0.4);
+            border: 2px solid rgba(0, 0, 250, 0.3);
         }
 
         .tooltip-elvalaszto {
@@ -291,7 +305,7 @@
             opacity: 1;
         }
 
-        /* Reszponzív beállítások mobilra (csak az oszlopok átváltása, nincs felső margó csökkentés) */
+        /* Reszponzív beállítások mobilra */
         @media (max-width: 768px) {
             .fo-oldal-elrendezes {
                 padding-left: 10px;
@@ -317,7 +331,191 @@
 
     <div class="fo-oldal-elrendezes">
         
-        <!-- 1. BLOKK: Tápcsatlakozó beépítése -->
+        <!-- 1. BLOKK: Távirányító és Leírások Egységes Doboza -->
+        <div class="also-tartalom-doboz">
+            <img src="tavkapcs.png" alt="Interaktív Távirányító" class="tav-cimkep">
+            
+            <div class="also-tartalom">
+                
+                <!-- BAL OSZLOP: Távirányító -->
+                <div class="bal-oszlop">
+                    <div class="kep-kontener">
+                        <img src="tav.png" alt="Interaktív Távirányító" class="alap-kep">
+
+                        <div class="gombok-csoport">
+                            <div class="hotspot btn-power"><div class="tooltip-szoveg"><strong>Power</strong><div class="tooltip-elvalaszto"></div>Nem programozható / nincs funkcíója</div></div>
+        <div class="hotspot btn-nema">
+            <div class="tooltip-szoveg">
+                <strong>Leállítás</strong><br><div class="tooltip-elvalaszto"></div> Figyelem!! Ebben a menüben<br> Csak a HOME visszalépés,<br> Illitve az OK leállitás 			müködik!
+                <div class="tooltip-elvalaszto"></div>
+                FONTOS!! Mivel ez egy linux alapu számitógép,<br>a leállítás szükséges minden áramtalanítás elött!<br>Az eszközben nem esne kár de az sd kártya halálához 		vezethet!!
+            </div>
+        </div>
+        <div class="hotspot btn-pgplus"><div class="tooltip-szoveg"><strong>Motor +</strong><br><div class="tooltip-elvalaszto"></div> Motor előre.</div></div>
+        <div class="hotspot btn-airmouse"><div class="tooltip-szoveg">
+		<strong>Ami mindent elront !!</strong><br><div class="tooltip-elvalaszto"></div>
+		FONTOS!!!! Szerepe nincs de elronthatja a gombkezelést.
+		<div class="tooltip-elvalaszto"></div>
+		Elem behyelyezésekor automatikusan bekapcsol, ha elindult a rendszer nyomd meg egyszer, így ellenőrizd:
+		<div class="tooltip-elvalaszto"></div>
+		Főképernyőn nyomd le valamelyik hangerő gombot, ha 1 sávot ugrik akkor jó. 
+		Ha folyamtosan fút a sáv, vagy az OK gomb nem reagál akkor bevan kapcsolva, nyomd meg a gombot mégegyszer!
+		<div class="tooltip-elvalaszto"></div>
+		Ezt csak egyszer szükséges megcsinálni az írányító menti a beálitást!!</div></div> 
+        <div class="hotspot btn-pgminus"><div class="tooltip-szoveg"><strong>Motor -</strong><br><div class="tooltip-elvalaszto"></div> Motor hátra.</div></div>
+        <div class="hotspot btn-up"><div class="tooltip-szoveg"><strong>Fel</strong><br><div class="tooltip-elvalaszto"></div> Menüben navigáció felfelé.</div></div>
+        <div class="hotspot btn-down"><div class="tooltip-szoveg"><strong>Le</strong><br><div class="tooltip-elvalaszto"></div> Menüben navigáció lefelé.</div></div>
+        <div class="hotspot btn-left"><div class="tooltip-szoveg"><strong>Balra</strong><br><div class="tooltip-elvalaszto"></div> Menüben navigáció balra.</div></div>
+        <div class="hotspot btn-right"><div class="tooltip-szoveg"><strong>Jobbra</strong><br><div class="tooltip-elvalaszto"></div> Menüben navigáció jobbra.</div></div>
+        <div class="hotspot btn-ok"><div class="tooltip-szoveg"><strong>OK</strong><br><div class="tooltip-elvalaszto"></div> ENTER / Kiválasztás / Videók indítása.</div></div>
+        <div class="hotspot btn-vissza"><div class="tooltip-szoveg"><strong>Vissza</strong><br><div class="tooltip-elvalaszto"></div> Visszalépés a menübe.</div></div>
+        <div class="hotspot btn-home">
+		<div class="tooltip-szoveg">
+		<strong>Főmenü/Home</strong><br><div class="tooltip-elvalaszto"></div>
+		Egy Klikk Visszatérés a kezdőképernyőre.
+		<div class="tooltip-elvalaszto"></div>
+		Dupla Klikk: Kijelző és lejátszó újraindítása hiba esetén.
+		<div class="tooltip-elvalaszto"></div>
+		Tripla Klikk: Ha az előző opcíó nem oldja meg a problémát, ez teljes újraindítást csinál.
+	    </div>
+	</div>
+        <div class="hotspot btn-voldown"><div class="tooltip-szoveg"><strong>Hangerő le</strong><br><div class="tooltip-elvalaszto"></div> Hangerő csökkentése.</div></div>
+        <div class="hotspot btn-mikrofon">
+            <div class="tooltip-szoveg">
+                <strong>Hangkimenet választás</strong><br><div class="tooltip-elvalaszto"></div>
+                Egy Klikk: Keresés indítása, ha nem megy automatikusan.
+                <div class="tooltip-elvalaszto"></div>
+                Dupla Klikk: Váltás bluetooth hangra és vissza.</div></div>
+
+        <div class="hotspot btn-volup"><div class="tooltip-szoveg"><strong>Hangerő fel</strong><br><div class="tooltip-elvalaszto"></div> Hangerő növelése.</div></div>
+
+        <div class="hotspot btn-prev"><div class="tooltip-szoveg"><strong>Előző szám</strong><br><div class="tooltip-elvalaszto"></div> Visszafelé ugrás.</div></div>
+
+        <div class="hotspot btn-play"><div class="tooltip-szoveg"><strong>Menü</strong>
+	<br><div class="tooltip-elvalaszto"></div> Belépés a menűbe.
+	<br><div class="tooltip-elvalaszto"></div> Egy Klikk: sima lejátszás, videó végén visszatér a főképernyőre.
+	<br><div class="tooltip-elvalaszto"></div> Dupla Klikk: folyamatos lejátszás végtelenül.
+	<br><div class="tooltip-elvalaszto"></div> Dupla OK gombal indítva az adott videó megy loopban.</div></div>
+
+        <div class="hotspot btn-next"><div class="tooltip-szoveg"><strong>Következő szám</strong><br><div class="tooltip-elvalaszto"></div> Előre ugrás.</div></div>
+
+        <div class="hotspot btn-1"><div class="tooltip-szoveg"><strong>1-es gomb</strong>
+	<br><div class="tooltip-elvalaszto"></div> Világítás kapcsoló 3 lépcsőben.
+	<br><div class="tooltip-elvalaszto"></div> (Kiegészítő panel szükséges)</div></div>
+
+        <div class="hotspot btn-2"><div class="tooltip-szoveg"><strong>2-es gomb</strong>
+	<br><div class="tooltip-elvalaszto"></div> Egy Klikk: Alapjárat hang.
+	<br><div class="tooltip-elvalaszto"></div> Dupla Klikk: "Gáz" hang.
+	<br><div class="tooltip-elvalaszto"></div> (Kiegészítő panel szükséges)</div></div>
+
+        <div class="hotspot btn-3"><div class="tooltip-szoveg"><strong>3-as gomb</strong>
+	<br><div class="tooltip-elvalaszto"></div> Duda.
+	<br><div class="tooltip-elvalaszto"></div> (Kiegészítő panel szükséges)</div></div>
+
+        <div class="hotspot btn-4"><div class="tooltip-szoveg"><strong>4-es gomb</strong>
+	<br><div class="tooltip-elvalaszto"></div> Bal index.
+	<br><div class="tooltip-elvalaszto"></div> (Kiegészítő panel szükséges)</div></div>
+
+        <div class="hotspot btn-5"><div class="tooltip-szoveg"><strong>5-ös gomb</strong>
+	<br><div class="tooltip-elvalaszto"></div> Vészvillogó.
+	<br><div class="tooltip-elvalaszto"></div> (Kiegészítő panel szükséges)</div></div>
+
+        <div class="hotspot btn-6"><div class="tooltip-szoveg"><strong>6-os gomb</strong>
+	<br><div class="tooltip-elvalaszto"></div> Jobb index.
+	<br><div class="tooltip-elvalaszto"></div> (Kiegészítő panel szükséges)</div></div>
+
+        <div class="hotspot btn-7"><div class="tooltip-szoveg"><strong>7-es gomb</strong>
+	<br><div class="tooltip-elvalaszto"></div> Alváz Neon.
+	<br><div class="tooltip-elvalaszto"></div> Egy Klikk: Módváltás.
+	<br><div class="tooltip-elvalaszto"></div> Dupla Klikk: Ki / Be kapcsolás.
+	<br><div class="tooltip-elvalaszto"></div> Tripla Klikk: Sebesség állítás.</div></div>
+
+        <div class="hotspot btn-8"><div class="tooltip-szoveg"><strong>8-as gomb</strong>
+	<br><div class="tooltip-elvalaszto"></div> 2 Neon egyszerre.
+	<br><div class="tooltip-elvalaszto"></div> Egy Klikk: Módváltás.
+	<br><div class="tooltip-elvalaszto"></div> Dupla Klikk: Ki / Be kapcsolás.
+	<br><div class="tooltip-elvalaszto"></div> Tripla Klikk: Sebesség állítás.</div></div>
+
+        <div class="hotspot btn-9"><div class="tooltip-szoveg"><strong>9-es gomb</strong>
+	<br><div class="tooltip-elvalaszto"></div> Csomagtér Neon.
+	<br><div class="tooltip-elvalaszto"></div> Egy Klikk: Módváltás.
+	<br><div class="tooltip-elvalaszto"></div> Dupla Klikk: Ki / Be kapcsolás.
+	<br><div class="tooltip-elvalaszto"></div> Tripla Klikk: Sebesség állítás.</div></div>
+
+        <div class="hotspot btn-del"><div class="tooltip-szoveg"><strong>DEL Gomb</strong>
+	<br><div class="tooltip-elvalaszto"></div>Fék Lámpa.
+	<br><div class="tooltip-elvalaszto"></div> (Kiegészítő panel szükséges)</div></div>
+
+        <div class="hotspot btn-0"><div class="tooltip-szoveg"><strong>0-ás gomb</strong>
+	<br><div class="tooltip-elvalaszto"></div>Tolató Lámpa.
+	<br><div class="tooltip-elvalaszto"></div> (Kiegészítő panel szükséges)</div></div>
+
+        <div class="hotspot btn-settings"><div class="tooltip-szoveg"><strong>Ködlámpa / Háttérvilágítás</strong>
+	<br><div class="tooltip-elvalaszto"></div>Rövid nyomás - ködlámpa.
+	<br>(Kiegészítő panel szükséges)
+	<br><div class="tooltip-elvalaszto"></div> Hosszú nyomás - Írányitó háttérvilágítás ki / be kapcsolás.
+	<br>Kék: Gombnyomásra világít kb 5mp ig.
+	<br>Fehér: Folyamatosan világít.</div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JOBB OSZLOP: Szöveges dobozok -->
+                <div class="jobb-oszlop">
+                    <div class="leiras-doboz">
+                        <h2>Rendszer áttekintése és Fontos Tudnivalók</h2>
+                        <p><strong>Üdvözöllek a Nissan Skyline Ultimate Elektronics Board felületén!</strong><br> Ez az oldal segít eligazodni a "Rendszer" telepítésével / beépítésével, lehetséges híbákkal, és funkcíokkal kapcsolatban.<br><div class="tooltip-elvalaszto"></div>
+			<h2>Gombkiosztáshoz vidd az egeret a gombok fölé.</h2>
+			Pg+ és Pg- gombokkal 5v os dc motor vezérelhető pl az alábbi célokra:
+			<ul><li>Csomagtér nyítás (folyamatban a kidolgozása).</li>
+			    <li>Nitro purge utánzása "porlasztóval".</li>
+			    <li>Motor hűtőventilátor stb.</li></ul><div class="tooltip-elvalaszto"></div>
+			<strong>Figyelem! </strong>Amíg a rendszer nem indul el, a hangszóróból jöhetnek zajok / esetleg sípolás, ez pár mp et jelent.<br><div class="tooltip-elvalaszto"></div>
+			Kérlek miútán elindult a Logo a képernyőkön még várj 15 - 20mp et hogy betöltödjön biztosan minden. Sajnos még ennek ellenére is elöfordulhat ha belépsz a menübe sötétkép lehet. Erre megoldás hogy home gombal visszalépsz, vagy a nyilakkal lépegetsz.<br><div class="tooltip-elvalaszto"></div>
+			<h2>Ezekre a késöbbiekben jönni fog frissités, ami távolról wifin keresztül lehetséges. nem igényel semilyen bontást az autón!</h2>
+			</p>
+                    </div>
+
+                    <div class="leiras-doboz figyelmeztetes">
+                        <h2>A legfontosabb veszélyforrás: A Légi Egér (Air Mouse)</h2>
+                        <p><strong>Ami mindent elronthat!!</strong> Az elem behelyezésekor ez a funkció automatikusan bekapcsol. Ha elindult a rendszer, ellenőrizd !!</p>
+                        <ul>
+                            <li>A főképernyőn nyomd le valamelyik hangerő gombot. Ha a hangerő sáv pontosan 1 egységet ugrik, akkor minden rendben.</li>
+                            <li>Ha a sáv folyamatosan fut, vagy az OK gomb nem reagál, akkor a légi egér be van kapcsolva.</li>
+                            <li><strong>Megoldás:</strong> Nyomd meg a légi egér gombot még egyszer a kikapcsoláshoz. Ezt csak egyszer kell elvégezni, az irányító menti a beállítást!</li>
+                        </ul>
+                    </div>
+
+                    <div class="leiras-doboz figyelmeztetes">
+                        <h2>Biztonságos Leállítás</h2>
+                        <p><strong>FIGYELEM!!</strong> Mivel egy Linux alapú számítógépen fut, kérjük minden áramtalanítás előtt figyelj a szabályos leállításra, hogy elkerüld az SD-kártya sérülését.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ÚJ BLOKK: Főmodulok (11, 12, 13.jpg) -->
+        <div class="tap-csatlakozo-szekcio">
+	    <img src="modul.png" alt="fő modulok" class="tap-beep-kep">
+            <div class="kepek-racs">
+                <div class="kep-elem">
+                    <img src="11.jpg" alt="11. Modul">
+                    <p>Kész müszerfal modul, dupla kijelzővel. Kesztyűtartó feletti egyedileg választható videoval.<br> Beépités a gyári leírás szerint. Készre szerelve kapod meg.</p>
+                </div>
+                <div class="kep-elem">
+                    <img src="12.jpg" alt="12. Modul">
+                    <p>Csomagtartó modul. Beépités a gyári leírás szerint. Készre szerelve kapod meg.</p>
+                </div>
+                <div class="kep-elem">
+                    <img src="13.jpg" alt="13. Modul">
+                    <p>Csomagtartó modul hátulról. Bal fenti 4 üres aljzatba csatlakoznak a gyári vagy a modósított neonok.<br>
+		    Motor aljzatba csatlakoztatható a fentebb említett 5V os DC motor.<br>
+		    Input 5V aljzat = Ez tartalék 5V kimenet lett nem használjuk jelenleg.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. BLOKK: Tápcsatlakozó beépítése -->
         <div class="tap-csatlakozo-szekcio">
             <img src="tapbeep.png" alt="Tápcsatlakozó beépítése" class="tap-beep-kep">
             
@@ -345,7 +543,7 @@
             </div>
         </div>
 
-        <!-- 2. BLOKK: Tápelosztó beépítése -->
+        <!-- 3. BLOKK: Tápelosztó beépítése -->
         <div class="tap-csatlakozo-szekcio">
             <img src="tapeloszto.png" alt="Tápelosztó beépítése" class="tap-beep-kep">
             
@@ -373,143 +571,132 @@
             </div>
         </div>
 
-        <!-- 3. BLOKK: Távirányító és Leírások Egységes Doboza -->
-        <div class="also-tartalom-doboz">
-            <img src="tavkapcs.png" alt="Interaktív Távirányító" class="tav-cimkep">
+        <!-- 4. Neon beépítés (14.jpg - 23.jpg) -->
+        <div class="tap-csatlakozo-szekcio">
+            <img src="neonbeep.png" alt="Neon beépítése" class="tap-beep-kep">
             
-            <div class="also-tartalom">
-                
-                <!-- BAL OSZLOP: Távirányító -->
-                <div class="bal-oszlop">
-                    <div class="kep-kontener">
-                        <img src="tav.png" alt="Interaktív Távirányító" class="alap-kep">
-
-                        <div class="gombok-csoport">
-                            <div class="hotspot btn-power"><div class="tooltip-szoveg"><strong>Power</strong><div class="tooltip-elvalaszto"></div>Nem programozható / nincs funkciója</div></div>
-                            <div class="hotspot btn-nema">
-                                <div class="tooltip-szoveg">
-                                    <strong>Leállítás</strong><div class="tooltip-elvalaszto"></div> 
-                                    Figyelem!! Ebben a menüben csak a HOME és az OK működik!<br>
-                                    FONTOS: Linux alapú gép, áramtalanítás előtt leállítás szükséges!
-                                </div>
-                            </div>
-                            <div class="hotspot btn-pgplus"><div class="tooltip-szoveg"><strong>Motor +</strong><div class="tooltip-elvalaszto"></div>Motor előre.</div></div>
-                            <div class="hotspot btn-airmouse">
-                                <div class="tooltip-szoveg">
-                                    <strong>Ami mindent elronthat !!</strong><div class="tooltip-elvalaszto"></div>
-                                    Elronthatja a gombkezelést, ellenőrizd a leírásban!
-                                </div>
-                            </div>  
-                            <div class="hotspot btn-pgminus"><div class="tooltip-szoveg"><strong>Motor -</strong><div class="tooltip-elvalaszto"></div>Motor hátra.</div></div>
-                            <div class="hotspot btn-up"><div class="tooltip-szoveg"><strong>Fel</strong><div class="tooltip-elvalaszto"></div>Menüben navigáció felfelé.</div></div>
-                            <div class="hotspot btn-down"><div class="tooltip-szoveg"><strong>Le</strong><div class="tooltip-elvalaszto"></div>Menüben navigáció lefelé.</div></div>
-                            <div class="hotspot btn-left"><div class="tooltip-szoveg"><strong>Balra</strong><div class="tooltip-elvalaszto"></div>Menüben navigáció balra.</div></div>
-                            <div class="hotspot btn-right"><div class="tooltip-szoveg"><strong>Jobbra</strong><div class="tooltip-elvalaszto"></div>Menüben navigáció jobbra.</div></div>
-                            <div class="hotspot btn-ok"><div class="tooltip-szoveg"><strong>OK</strong><div class="tooltip-elvalaszto"></div>ENTER / Kiválasztás / Videók indítása.</div></div>
-                            <div class="hotspot btn-vissza"><div class="tooltip-szoveg"><strong>Vissza</strong><div class="tooltip-elvalaszto"></div>Visszalépés a menübe.</div></div>
-                            <div class="hotspot btn-home">
-                                <div class="tooltip-szoveg">
-                                    <strong>Főmenü/Home</strong><div class="tooltip-elvalaszto"></div>
-                                    1 kattintás: Kezdőképernyő<br>
-                                    2 kattintás: Újraindítás<br>
-                                    3 kattintás: Teljes reset
-                                </div>
-                            </div>
-                            <div class="hotspot btn-voldown"><div class="tooltip-szoveg"><strong>Hangerő le</strong><div class="tooltip-elvalaszto"></div>Hangerő csökkentése.</div></div>
-                            <div class="hotspot btn-mikrofon">
-                                <div class="tooltip-szoveg">
-                               شرایط     <strong>Hangkimenet választás</strong><div class="tooltip-elvalaszto"></div>
-                                    1 kattintás: Keresés<br>
-                                    2 kattintás: Bluetooth váltás
-                                </div>
-                            </div>
-                            <div class="hotspot btn-volup"><div class="tooltip-szoveg"><strong>Hangerő fel</strong><div class="tooltip-elvalaszto"></div>Hangerő növelése.</div></div>
-                            <div class="hotspot btn-prev"><div class="tooltip-szoveg"><strong>Előző szám</strong><div class="tooltip-elvalaszto"></div>Visszafelé ugrás.</div></div>
-                            <div class="hotspot btn-play">
-                                <div class="tooltip-szoveg">
-                                    <strong>Menü / Lejátszás</strong><div class="tooltip-elvalaszto"></div>
-                                    1 katt: Normál<br>
-                                    2 katt: Végtelen loop
-                                </div>
-                            </div>
-                            <div class="hotspot btn-next"><div class="tooltip-szoveg"><strong>Következő szám</strong><div class="tooltip-elvalaszto"></div>Előre ugrás.</div></div>
-                            <div class="hotspot btn-1"><div class="tooltip-szoveg"><strong>1-es gomb</strong><div class="tooltip-elvalaszto"></div>Világítás kapcsoló</div></div>
-                            <div class="hotspot btn-2"><div class="tooltip-szoveg"><strong>2-es gomb</strong><div class="tooltip-elvalaszto"></div>Alapjárat / Gáz hang</div></div>
-                            <div class="hotspot btn-3"><div class="tooltip-szoveg"><strong>3-as gomb</strong><div class="tooltip-elvalaszto"></div>Duda</div></div>
-                            <div class="hotspot btn-4"><div class="tooltip-szoveg"><strong>4-es gomb</strong><div class="tooltip-elvalaszto"></div>Bal index</div></div>
-                            <div class="hotspot btn-5"><div class="tooltip-szoveg"><strong>5-ös gomb</strong><div class="tooltip-elvalaszto"></div>Vészvillogó</div></div>
-                            <div class="hotspot btn-6"><div class="tooltip-szoveg"><strong>6-os gomb</strong><div class="tooltip-elvalaszto"></div>Jobb index</div></div>
-                            <div class="hotspot btn-7"><div class="tooltip-szoveg"><strong>7-es gomb</strong><div class="tooltip-elvalaszto"></div>Alváz Neon vezérlés</div></div>
-                            <div class="hotspot btn-8"><div class="tooltip-szoveg"><strong>8-as gomb</strong><div class="tooltip-elvalaszto"></div>2 Neon egyszerre</div></div>
-                            <div class="hotspot btn-9"><div class="tooltip-szoveg"><strong>9-es gomb</strong><div class="tooltip-elvalaszto"></div>Csomagtér Neon</div></div>
-                            <div class="hotspot btn-del"><div class="tooltip-szoveg"><strong>DEL Gomb</strong><div class="tooltip-elvalaszto"></div>Fék Lámpa</div></div>
-                            <div class="hotspot btn-0"><div class="tooltip-szoveg"><strong>0-ás gomb</strong><div class="tooltip-elvalaszto"></div>Tolató Lámpa</div></div>
-                            <div class="hotspot btn-settings"><div class="tooltip-szoveg"><strong>Ködlámpa / Háttérvilágítás</strong>
-                            <div class="tooltip-elvalaszto"></div>Rövid nyomás - ködlámpa.
-                            <br>(Kiegészítő panel szükséges)
-                            <div class="tooltip-elvalaszto"></div>Hosszú nyomás - Háttérvilágítás ki / be.
-                            <br>Kék: Gombnyomásra világít 5mp-ig.
-                            <br>Fehér: Folyamatosan világít.</div></div>
-                        </div>
-                    </div>
+            <div class="kepek-racs">
+                <div class="kep-elem">
+                    <img src="14.jpg" alt="14. lépés">
+                    <p>Komplett Neonszett kábelekkel csatlakózokkal. 2 oldalú ragasztóval kerülnek rőgzítésre.</p>
                 </div>
-
-                <!-- JOBB OSZLOP: Szöveges dobozok -->
-                <div class="jobb-oszlop">
-                    <div class="leiras-doboz">
-                        <h2>Rendszer áttekintése és Fontos Tudnivalók</h2>
-                        <p>Üdvözöllek a garázs vezérlőrendszer felületén! Ez az oldal segít eligazodni a távirányító gombjainak funkcióiban. Mivel a rendszer egy beágyazott Linux alapú számítógépen fut, kérjük, minden áramtalanítás előtt figyelj a szabályos leállításra, hogy elkerüld az SD-kártya sérülését.</p>
-                    </div>
-
-                    <div class="leiras-doboz figyelmeztetes">
-                        <h2>A legfontosabb veszélyforrás: A Légi Egér (Air Mouse)</h2>
-                        <p><strong>Ami mindent elronthat!!</strong> Az elem behelyezésekor ez a funkció automatikusan bekapcsolhat. Ha elindult a rendszer, ellenőrizd az alábbi módon:</p>
-                        <ul>
-                            <li>A főképernyőn nyomd le valamelyik hangerő gombot. Ha a hangerő sáv pontosan 1 egységet ugrik, akkor minden rendben.</li>
-                            <li>Ha a sáv folyamatosan fut, vagy az OK gomb nem reagál, akkor a légi egér be van kapcsolva.</li>
-                            <li><strong>Megoldás:</strong> Nyomd meg a légi egér gombot még egyszer a kikapcsoláshoz. Ezt csak egyszer kell elvégezni, az irányító menti a beállítást!</li>
-                        </ul>
-                    </div>
-
-                    <div class="leiras-doboz">
-                        <h2>Biztonságos Leállítás</h2>
-                        <p><strong>FIGYELEM!!</strong> Ebben a menüben csak a <strong>HOME</strong> (visszalépés) és az <strong>OK</strong> (leállítás megerősítése) gombok működnek megfelelően.</p>
-                        <p>Mivel ez a Linux alapú gép igényli a szoftveres leállítást, áramtalanítás előtt mindig végezd el ezt a folyamatot!</p>
-                    </div>
-
-                    <div class="leiras-doboz">
-                        <h2>Főmenü és Újraindítási Lehetőségek (Home Gomb)</h2>
-                        <p>A Home gomb többszöri megnyomásával különböző rendszerfunkciókat érhetsz el:</p>
-                        <ul>
-                            <li><strong>Egy kattintás:</strong> Visszatérés a főképernyőre.</li>
-                            <li><strong>Dupla kattintás:</strong> Kijelző és lejátszó újraindítása.</li>
-                            <li><strong>Tripla kattintás:</strong> Teljes rendszer-újraindítás (hard reset).</li>
-                        </ul>
-                    </div>
-
-                    <div class="leiras-doboz">
-                        <h2>Lejátszó Vezérlés (Play / Menü Gomb)</h2>
-                        <p>A középső média lejátszás gomb viselkedése:</p>
-                        <ul>
-                            <li><strong>Egy kattintás:</strong> Sima lejátszás; a videó végén visszatér a főképernyőre.</li>
-                            <li><strong>Dupla kattintás:</strong> Végtelenített lejátszási mód (loop).</li>
-                        </ul>
-                    </div>
-
-                    <div class="leiras-doboz">
-                        <h2>Kiegészítő Panelek és Világítás</h2>
-                        <p>A számbillentyűk (1-9, DEL, 0, Beállítások) funkciói a kiegészítő panelen:</p>
-                        <ul>
-                            <li><strong>1-es gomb:</strong> Világítás kapcsoló.</li>
-                            <li><strong>2-es gomb:</strong> Alapjárat vagy gáz hang.</li>
-                            <li><strong>3-as gomb:</strong> Duda.</li>
-                            <li><strong>4, 5, 6 gombok:</strong> Indexek és vészvillogó.</li>
-                            <li><strong>7, 8, 9 gombok:</strong> Neon világítások vezérlése.</li>
-                            <li><strong>DEL / 0 gombok:</strong> Fék- és tolatólámpa.</li>
-                        </ul>
-                    </div>
+                <div class="kep-elem">
+                    <img src="15.jpg" alt="15. lépés">
+                    <p>Hátsó Neon oldalsó pozicióját a 2 pirossal jelzett kiemelkedés adja meg, a hátsó falnak szoritsd neki és utána nyomd lefelé.<br>A végeredmény valahogy így néz ki.</p>
                 </div>
+                <div class="kep-elem">
+                    <img src="16.jpg" alt="16. lépés">
+                    <p>Hátsó Neon kábelelvezetés / rögzítés.</p>
+                </div>
+                <div class="kep-elem">
+                    <img src="17.jpg" alt="17. lépés">
+                    <p>Hátsó Neon miatt a 2 takaró elem általakítására van szükség 103 as számban találod 103A 103B Elem.</p>
+                </div>
+                <div class="kep-elem">
+                    <img src="18.jpg" alt="18. lépés">
+                    <p>Első Neon pozicíóját a 2 kivágás adja meg. A továbbiakban fúrás szükséges.</p>
+                </div>
+                <div class="kep-elem">
+                    <img src="19.jpg" alt="19. lépés">
+                    <p>Ragasztó eltávolitása elött illeszd oda és jelöld be a fúrás helyét, végeredmény hasonló kell legyen.<br>
+		    A csomagban kapott hosszú vezetéket vezesd el a gyári előre menő világítások melett és alul húzd ki.</p>
+                </div>
+                <div class="kep-elem">
+                    <img src="20.jpg" alt="20. lépés">
+                    <p>Oldalsó Neonok. Hátsó pozicíóját a gyári kivágás és a neon kábelkívezetése adja meg.<br>
+		    Oldal írányban a 2 pirossal jelzett "fül" adja meg a pozíciot. eredetileg a leírás szerint csatlakozik ide pár kis müanyag alkatrész ez gyári állapotában nem fér el. 				    Bekötési hely a főmodulok résznél.</p>
+                </div>
+                <div class="kep-elem">
+		    <p>Pár kész kép.</p>
+                    <img src="21.jpg" alt="21. lépés">
+                </div>
+                <div class="kep-elem">
+                    <img src="22.jpg" alt="22. lépés">
+                </div>
+                <div class="kep-elem">
+                    <img src="23.jpg" alt="23. lépés">
+                </div>
+            </div>
+        </div>
+		<!-- ÚJ BLOKK: Alternatív lámpa kábelezés (24.jpg - 34.jpg) -->
+        <div class="tap-csatlakozo-szekcio">
+            <img src="lampa.png" alt="Alternatív lámpa kábelezés" class="tap-beep-kep">
+            
+            <div class="kepek-racs">
+                <div class="kep-elem">
+                    <img src="24.jpg" alt="24. lépés">
+                    <p>Jobb lámpa kábelezés, ragasztóval tekerj be kb 5cm es részt.</p>
+                </div>
+                <div class="kep-elem">
+                    <img src="25.jpg" alt="25. lépés">
+                    <p>Így kell kinéznie.</p>
+                </div>
+                <div class="kep-elem">
+                    <img src="26.jpg" alt="26. lépés">
+                    <p>Bal lámpa kábelezés, ragasztóval tekerj be kb 5cm es részt.</p>
+                </div>
+                <div class="kep-elem">
+                    <img src="27.jpg" alt="27. lépés">
+                    <p>Így kell kinéznie.</p>
+                </div>
+                <div class="kep-elem">
+                    <img src="28.jpg" alt="28. lépés">
+                    <p>A 2 lámpaközti vezetéket gyűrd a cooler mögé</p>
+                </div>
+                <div class="kep-elem">
+                    <img src="29.jpg" alt="29. lépés">
+                    <p>Ide fúrj 1 lyukat 6mm elég lehet (enyém nem lett a legszebb).</p>
+                </div>
+                <div class="kep-elem">
+                    <img src="30.jpg" alt="30. lépés">
+                    <p>Kábelelvezetés helye, ne felejtsd el a neon kábelét és itt elhúzni.</p>
+                </div>
+                <div class="kep-elem">
+                    <img src="31.jpg" alt="31. lépés">
+                    <p>Tekerd be szigetelőszalaggal a képen látható módon.</p>
+                </div>
+                <div class="kep-elem">
+                    <img src="32.jpg" alt="32. lépés">
+                    <p>Pirossal jelölve az eltávolitandó részek.</p>
+                </div>
+                <div class="kep-elem">
+                    <img src="33.jpg" alt="33. lépés">
+                    <p>Kész is vagyunk.</p>
+                </div>
+                <div class="kep-elem">
+                    <img src="34.jpg" alt="34. lépés">
+                    <p>Kereket felszerelve semmi nem látszik belőle, cserébe nyertünk 1 letisztult motorteret.</p>
+                    <br>
+		    <img src="35.jpg" alt="35. lépés">
+                </div>
+            </div>
+        </div>
 
+	<!-- 5. BLOKK: Felni és ültetés -->
+        <div class="tap-csatlakozo-szekcio">
+            <img src="felni.png" alt="Felni módosítás és ültetés" class="tap-beep-kep">
+            
+            <div class="kepek-racs">
+                <div class="kep-elem">
+                    <img src="36.jpg" alt="36. lépés">
+                    <p>A külső perem 3 fülének letőrése ( közel tőbe megfogva fogoval szépen letörik).</p>
+                </div>
+                <div class="kep-elem">
+                    <img src="37.jpg" alt="37. lépés">
+                    <p>Jöhet a középrész csiszolása belülről, (nyugodtan mehet köszörűn is) pirossal jelölt részek legyenk síkba.</p>
+                </div>
+                <div class="kep-elem">
+                    <img src="38.jpg" alt="38. lépés">
+                    <p>A gyárilag előirt helyett AM csavarral szereld össze, Szemmel látható a különbség (bal oldalt).</p>
+                </div>
+                <div class="kep-elem">
+                    <img src="39.jpg" alt="39. lépés">
+                    <p>Nyomtávszélesítő alátét is kapható hogy a helyén legyen a kerék :)</p>
+                </div>
+                <div class="kep-elem">
+                    <img src="40.jpg" alt="40. lépés">
+                    <p>Ültetés annyibol áll hogy a rugóstagokat teljesen kihagyod, vagy pedig nem rögzited alul a felfügesztéshez.</p>
+                </div>
             </div>
         </div>
 
